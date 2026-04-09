@@ -23,8 +23,4 @@ void limparbufferEntrada() {
      struct Livros biblioteca[MAX_LIVROS];
      int totalLivros = 0;
      int opcao;
-
-     do {
-         printf("=========================");
-     }
  }
