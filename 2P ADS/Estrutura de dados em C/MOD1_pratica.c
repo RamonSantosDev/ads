@@ -60,17 +60,48 @@ void limparbufferEntrada() {
                 printf("Digite a editora: ");
                 fgets(biblioteca[totalLivros].editora, TAM_STRING, stdin);
 
-                biblioteca[totalLivros].nome[strcspn(biblioteca[totalLivros].nome, "\n")] =
+                biblioteca[totalLivros].nome[strcspn(biblioteca[totalLivros].nome, "\n")] = '\0';
+                biblioteca[totalLivros].autor[strcspn(biblioteca[totalLivros].autor, "\n")] = '\0';
+                biblioteca[totalLivros].editora[strcspn(biblioteca[totalLivros].editora, "\n")] = '\0';
+
+                printf("digite a edição: ");
+                scanf("%d", &biblioteca[totalLivros].edicao);
+                limparbufferEntrada();
+                
+                totalLivros++;
+
+                printf("Livro cadastrado com sucesso!\n");
+
+            } else {
+                printf("Limite de livros atingido!\n");
             }
             break;
-        
-        default:
+
+        case 2:
+            printf("\nLista de livros:\n");
+
+            if (totalLivros == 0) {
+                printf("Nenhum livro cadastrado.\n");
+            } else {
+                for (int i = 0; i < totalLivros; i++) {
+                    printf("\nLivro %d:\n", i + 1);
+                    printf("Nome: %s\n", biblioteca[i].nome);
+                    printf("Autor: %s\n", biblioteca[i].autor);
+                    printf("Editora: %s\n", biblioteca[i].editora);
+                    printf("Edicao: %d\n", biblioteca[i].edicao);
+                }
+            }
             break;
+
+        case 0:
+            printf("Saindo...\n");
+            break;
+
+        default:
+            printf("Opcao invalida!\n");
         }
-    }
 
+    } while (opcao != 0);
 
-
-
-
- }
+    return 0;
+}
