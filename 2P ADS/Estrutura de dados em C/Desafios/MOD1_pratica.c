@@ -14,6 +14,7 @@
 
 //Constantes Globais
 #define MAX_LIVROS 50
+#define MAX_EMPRESTIMOS 100 // Definimos uma capacidade para emprestimos.
 #define TAM_STRING 100
 
 struct Livros // Definição de estrutura (Struct)
@@ -22,8 +23,14 @@ struct Livros // Definição de estrutura (Struct)
     char autor[TAM_STRING];
     char editora[TAM_STRING];
     int edicao;
+    int disponivel; // 1 para sim, 0 para não.
 };
 
+//nova struct para armazenar informaçoes do emprestimos.
+struct Emprestimo{
+    int indeceLivros;
+    char nomeUsuario[TAM_STRING];
+};
 // função para limpar o buffer de entrada
 void limparbufferEntrada() {
     int c;
