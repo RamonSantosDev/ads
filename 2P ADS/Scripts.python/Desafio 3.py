@@ -1,0 +1,5 @@
+print('====Desafio 3====')
+n1 = input('digite o primeiro numero ')
+n2 = input('digite o segundo numero ')
+soma = (n1 + n2)
+print('a soma de',n1,'+',n2,'é igual a',soma)
